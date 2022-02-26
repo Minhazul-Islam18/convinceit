@@ -1,0 +1,1 @@
+<img src="https://logindesigns.com/front/Login%20logo/logo-color.png" alt="" style="width: 30%;margin: 0 auto;">
