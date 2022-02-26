@@ -692,35 +692,37 @@
                             <!-- Item  content -->
                             <div style="overflow-x: hidden" id="{{ $post -> id}}" class="port">
                                 <div class="row">
-                                    <div class="description">
-                                    <h1>{{ $post -> title}}</h1>
-                                    <div class="information">
-                                        <p class="tit pb-webpage">Basic Information</p>
-                                        <table cellspacing="0" cellpadding="0" border="0">
-                                            <tbody>
-                                                <tr>
-                                                    <td>Description:</td>
-                                                    <td> @php
-                                                        echo $post -> description
-                                                        @endphp
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Software:</td><td>Illustrator/Photoshop</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Format:</td><td>AI/PSD</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Upload Time:</td><td>{{
-                                                        date('d-m-Y', strtotime($post -> published_at));}}</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="description col-md-6 col-lg-6 col-sm-12">
+                                            <h1>{{ $post -> title}}</h1>
+                                            <div class="information">
+                                                <p class="tit pb-webpage">Basic Information</p>
+                                                <table cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Description:</td>
+                                                            <td> @php
+                                                                echo $post -> description
+                                                                @endphp
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Software:</td><td>Illustrator/Photoshop</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Format:</td><td>AI/PSD</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Upload Time:</td><td>{{
+                                                                date('d-m-Y', strtotime($post -> published_at));}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                     </div>
-                                 </div>
-                            
-                                    <img src="{{ asset('/website/images/graphic-demo/'.$post -> featured_image) }}" alt="{{ $post -> title}}" title="" />
+                                    <div class="col-md-6 col-lg-6 col-sm-12">
+                                        <img src="{{ asset('/website/images/graphic-demo/'.$post -> featured_image) }}" alt="{{ $post -> title}}" title="" />
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <!-- / row -->
