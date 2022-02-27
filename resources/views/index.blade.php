@@ -125,12 +125,11 @@
     -moz-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     }
-    .port img {
+    /* .port img {
     width: 50%;
-    }
+    } */
     .port .description {
     float: left;
-    width: 50%;
     max-height: 100%;
     padding: 0 40px 40px;
     overflow: auto;
