@@ -3,6 +3,7 @@
 use App\Http\Controllers\GCategoryController;
 use App\Http\Controllers\GraphicPortfolioController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\PostcategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TagController;
@@ -51,9 +52,7 @@ use Illuminate\Support\Facades\Auth;
 
     Route::get('/website_portfolio', [WportfolioController::class, 'show'])->name('website_portfolio');
 
-
-
-
+    Route::post('/subscribe',[NewsletterController::class, 'store'])->name('subscribe');
 
 
 Auth::routes();

@@ -722,7 +722,8 @@
                                             <div class="widget-content">
                                                 <h6>Newsletter</h6>
                                                 <div class="newsletter-form">
-                                                    <form method="post" action="http://layerdrops.com/linoor/contact.html">
+                                                    <form method="post" action="{{ route('subscribe')}}">
+                                                        @csrf
                                                         <div class="form-group clearfix">
                                                             <input type="email" name="email" value="" placeholder="Email Address"
                                                                 required="">

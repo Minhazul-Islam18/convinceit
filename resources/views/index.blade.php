@@ -1,4 +1,11 @@
 <style>
+    .information tr td a {
+	display: flex;
+	justify-content: center;
+    }
+    .information tr a img {
+	width: 50%;
+    }
     .information {
 	padding: 1.5rem 2.8rem;
 	border-top: 1px solid #ffaa17;
@@ -713,6 +720,12 @@
                                                         <tr>
                                                             <td>Upload Time:</td><td>{{
                                                                 date('d-m-Y', strtotime($post -> published_at));}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Have a Look!</td>
+                                                            <td>
+                                                                <a href="{{ $post -> project_url}}" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/cute-clipart/64/000000/link.png"/></a>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
