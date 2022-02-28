@@ -49,6 +49,7 @@ class GCategoryController extends Controller
         //data insert
         // $g_category = new g_category;
         // $g_category->name = $request->name;
+        // $g_category->slug = Str::slug($request->name, '-');
         // $g_category->description = $request->description;
         // $g_category->save();
         $g_category = g_category::create([

@@ -45,7 +45,10 @@
                   <td>{{ $g_category -> id}}</td>
                   <td> {{ $g_category -> name}} </td>
                   <td> {{ $g_category -> slug}} </td>
-                  <td> {{ $g_category -> description}} </td>
+                  <td> @php
+                    echo $g_category -> description
+                  @endphp
+                  </td>
                   <td> May 15, 2015 </td>
                   <td>
                     <a href="{{ route('g_category.edit',[$g_category -> id])}}" class="btn btn-gradient-primary btn-fw">EDIT</a>
