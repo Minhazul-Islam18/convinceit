@@ -54,7 +54,6 @@ use Illuminate\Support\Facades\Auth;
 
     Route::post('/subscribe',[NewsletterController::class, 'store'])->name('subscribe');
 
-
 Auth::routes();
 //admin routes
 Route::middleware(['auth'])->prefix('admin')->group(function (){

@@ -251,12 +251,12 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#website-demos" aria-expanded="false" aria-controls="general-pages">
+              <a class="nav-link" data-toggle="collapse" href="#Graphic-Portfolio" aria-expanded="false" aria-controls="general-pages">
                 <span class="menu-title">Graphic Portfolio</span>
                 <i class="menu-arrow"></i>
                 <i class=" mdi mdi-clipboard-text"></i>
               </a>
-              <div class="collapse" id="website-demos">
+              <div class="collapse" id="Graphic-Portfolio">
                 <ul class="nav flex-column sub-menu">
                   <li class="nav-item"> <a class="nav-link" href="{{route('graphicportfolio.index')}}"> All Items </a></li>
                   <li class="nav-item"> <a class="nav-link" href="{{route('graphicportfolio.create')}}"> Add New </a></li>

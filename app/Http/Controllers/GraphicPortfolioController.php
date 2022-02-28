@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\g_category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\GraphicPortfolio;
@@ -28,7 +29,8 @@ class GraphicPortfolioController extends Controller
     public function create()
     {
         SEOMeta::setTitle('Graphic Portfolio - Create New!');
-        $categories = GraphicPortfolio::all();
+        // $categories = GraphicPortfolio::all();
+        $categories = g_category::all();
         return view('admin.GraphicPortfolio.create', compact('categories'));
     }
 
