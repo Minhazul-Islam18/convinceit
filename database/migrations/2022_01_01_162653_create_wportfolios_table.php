@@ -14,7 +14,7 @@ class CreateWportfoliosTable extends Migration
     public function up()
     {
         Schema::create('wportfolios', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->text('client')->nullable();
             $table->text('project_date')->nullable();
             $table->text('project_url')->nullable();

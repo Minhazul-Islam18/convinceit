@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class wportfolio extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    protected $fillable = ['id'];
 }

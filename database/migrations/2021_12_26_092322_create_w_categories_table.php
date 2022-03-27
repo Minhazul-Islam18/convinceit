@@ -14,7 +14,7 @@ class CreateWCategoriesTable extends Migration
     public function up()
     {
         Schema::create('w_categories', function (Blueprint $table) {
-            $table->id();
+            $table->id()-> nullable();
             $table->text('name') -> unique();
             $table->text('description') -> nullable();
             $table->text('slug');

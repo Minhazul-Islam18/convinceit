@@ -50,7 +50,7 @@ use Illuminate\Support\Facades\Auth;
         return view('uiux-design');
     })-> name('uiux-design');
 
-    Route::get('/website_portfolio', [WportfolioController::class, 'show'])->name('website_portfolio');
+    Route::get('/website_portfolio/{id}', [HomeController::class, 'webprof'])->name('website_portfolio');
 
     Route::post('/subscribe',[NewsletterController::class, 'store'])->name('subscribe');
 

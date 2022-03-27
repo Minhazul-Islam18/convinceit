@@ -7,6 +7,7 @@ use App\Models\w_category;
 use App\Models\wportfolio;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Artesaos\SEOTools\Facades\JsonLd;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Support\Facades\Session;
@@ -77,7 +78,7 @@ class WportfolioController extends Controller
         if ($request->file('featured_image')) {
             $fname=$request->file('featured_image');
             $ext= $request->file('featured_image')->getClientOriginalName();
-            $fname ->move('/website/images/portfolio_images/');  
+            $fname ->move(public_path('/website/images/portfolio_images/'), $ext);  
         }
         $post->featured_image=$ext;
         $post->description = $request->description;
@@ -102,8 +103,9 @@ class WportfolioController extends Controller
      */
     public function show(wportfolio $wportfolio)
     {
-        $data = wportfolio::all();
-        // dd($data);
+        //$data = wportfolio::all();
+        $data = DB::table('wportfolios')->where('id', $wportfolio->id)->get();
+        //dd($data);
         return view('includes.website_portfolio', ['portfolio' => $data], compact(['wportfolio','data']));
     }
 
@@ -170,9 +172,11 @@ class WportfolioController extends Controller
      * @param  \App\Models\wportfolio  $wportfolio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(wportfolio $wportfolio, $id)
+    public function destroy(wportfolio $wportfolio)
     {
-        $del= wportfolio::where('id',$id)->delete();
+        
+        $del=wportfolio::find($wportfolio->id);
+        $del->delete();
         if ($del) {
             Session::flash('success', 'Portfolio Deleted successfully');
             return redirect()->route('wportfolio.index');

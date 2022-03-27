@@ -48,8 +48,8 @@
                   <td> {!! html_entity_decode($category -> description) !!} </td>
                   <td> May 15, 2015 </td>
                   <td>
-                    <a href="{{ route('category.edit', $category -> id)}}" class="btn btn-gradient-primary btn-fw">EDIT</a>
-                    <form action="{{ route('category.destroy',[$category -> id])}}" method="POST">
+                    <a href="{{ route('category.edit',$category -> id)}}" class="btn btn-gradient-primary btn-fw">EDIT</a>
+                    <form action="{{ route('category.destroy',$w_categories)}}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-gradient-danger btn-fw">DELETE</button>

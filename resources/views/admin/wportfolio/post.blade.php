@@ -36,7 +36,6 @@
                   <th> Client </th>
                   <th> URL </th>
                   <th> Featured Image </th>
-                  <th> Images </th>
                   <th> Category </th>
                   <th> Published Date </th>
                   <th class="text-center"> Action </th>
@@ -55,11 +54,6 @@
                     <img src="{{ URL::to('/website/images/portfolio_images/'.$post -> featured_image) }}" alt="{{ $post -> title}}" title="" />
                     
                   </td>
-                  <td class="d-flex flex-wrap">
-                    @foreach (json_decode($post->image) as $item)
-                    <img src="{{ URL::to('/website/images/portfolio_images/'.$item) }}" alt="{{ $post -> title}}" title="" />
-                    @endforeach
-                      </td>
               <td> 
                     <?php 
                     $category_id = $post -> category_id;
@@ -75,7 +69,7 @@
                   <td> {{ $post -> published_at}} </td>
                   <td>
                     <a href="{{ route('wportfolio.edit', $post -> id)}}" class="btn btn-gradient-primary btn-fw">EDIT</a>
-                    <form action="{{ route('wportfolio.destroy',[$post -> id])}}" method="POST">
+                    <form action="{{ route('wportfolio.destroy', $post -> id)}}" method="POST">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-gradient-danger btn-fw">DELETE</button>

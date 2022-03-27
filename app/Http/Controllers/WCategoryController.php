@@ -22,7 +22,10 @@ class WCategoryController extends Controller
         // notify()->success('Here all website category!');
         smilify('success', 'Here all website category!');
         $w_categories = w_category::orderBy('created_at', 'DESC')->paginate('10');
-       return view('admin.category.category', compact('w_categories'));
+        $wd= w_category::pluck('id')->all();
+        $wid = w_category::whereIn('id',$wd)->get();
+        //$id= w_category::all()->first();
+       return view('admin.category.category',['wid' => $wid], compact('w_categories', 'wid'));
     }
 
     /**
@@ -89,7 +92,7 @@ class WCategoryController extends Controller
         $data['w_cat'] = DB::table('w_categories')->where($wh)->get();
         // $w_category = w_category::all();
         // return $w_cat;
-        return view('admin.category.edit', $data, compact('w_category'));
+        return view('admin.category.edit', $data, compact('w_category','data')) ->with('id' ,$id);
     }
 
     /**

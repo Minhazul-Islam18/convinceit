@@ -646,10 +646,11 @@
 
                       echo $res[0]->name ?? null;
                       ?> col-lg-4 col-md-6 col-sm-12">
+                       <a href="{{ route('website_portfolio', ['id'=>$user->id]) }}">
                         <div class="inner-box">
                             <figure class="image"><img src="{{ asset('/website/images/portfolio_images/'.$user -> featured_image) }}" alt=""></figure>
-                            <a href="/" class="lightbox-image overlay-box"
-                                data-fancybox="gallery"></a>
+                            {{-- <a href="/" class="lightbox-image overlay-box"
+                                data-fancybox="gallery"></a> --}}
                             <div class="cap-box">
                                 <div class="cap-inner">
                                     <div class="cat">
@@ -667,11 +668,12 @@
                                         </span>
                                     </div>
                                     <div class="title">
-                                        <h5><a href="/">{{$user->name}}</a></h5>
+                                        <h5><a href="{{ route('website_portfolio', ['id'=>$user->id]) }}">{{$user->name}}</a></h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                       </a>
                     </div>
                      @else   
                       <p>There is no item to Show!</p>

@@ -175,9 +175,14 @@
                         <!-- Swiper -->
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            @foreach ( json_decode($data[0]->image, true) as $item)
+                            {{-- {{dd($data)}} --}}
+                           @php
+                               $property_images = json_decode($data->image, true);
+                           @endphp
+                           {{-- {{dd($property_images)}}  --}}
+                            @foreach ( $property_images as $item)
                         <div class="swiper-slide">
-                            <a href="images/resource/featured-image-18.jpg" class="lightbox-image"
+                            <a href="{{ URL::to('/website/images/portfolio_images/'.$item) }}" class="lightbox-image"
                             data-fancybox="gallery"><img src="{{ URL::to('/website/images/portfolio_images/'.$item) }}" alt=""></a>
                         </div>
                         @endforeach 
@@ -191,16 +196,17 @@
                 <div class="text-col col-lg-4 col-md-12 col-sm-12">
                     <div class="inner">
                         <div class="text-content">
-                            <h5>{{$portfolio[0] -> name}}</h5>
+                            {{-- {{dd($portfolio)}} --}}
+                            <h5>{{$data -> name}}</h5>
                             <p>
                                 @php
-                                echo $portfolio[0] -> description
+                                echo $data -> description
                                 @endphp
                             </p>
                             <ul class="info">
-                                <li><strong>Clients:</strong> <br>{{$portfolio[0] -> client}}</li>
+                                <li><strong>Clients:</strong> <br>{{$data -> client}}</li>
                                 <li><strong>Category:</strong> <br><?php 
-                                  $category_id = $portfolio[0] -> category_id;
+                                  $category_id = $data -> category_id;
                                 
                                 $PDO = \DB::connection()->getPdo();
                                 $QUERY = $PDO->prepare("SELECT * FROM `w_categories` WHERE `id` = '$category_id'");
@@ -209,10 +215,10 @@
               
                                 echo $users[0]->name;
                                     ?></li>
-                                <li><strong>Date:</strong> <br>{{$portfolio[0] -> project_date}}</li>
+                                <li><strong>Date:</strong> <br>{{$portfolio -> project_date}}</li>
                             </ul>
                             <div class="btn proj">
-                                <a href="{{$portfolio[0] -> project_url}}">Have Look!</a>
+                                <a href="{{$portfolio -> project_url}}">Have Look!</a>
                             </div>
                         </div>
                     </div>
