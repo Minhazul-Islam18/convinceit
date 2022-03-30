@@ -648,7 +648,7 @@
                       ?> col-lg-4 col-md-6 col-sm-12">
                        <a href="{{ route('website_portfolio', ['id'=>$user->id]) }}">
                         <div class="inner-box">
-                            <figure class="image"><img src="{{ asset('/website/images/portfolio_images/'.$user -> featured_image) }}" alt=""></figure>
+                            <figure class="image"><img src="{{ URL::asset('/website/images/portfolio_images/'.$user -> featured_image) }}" alt=""></figure>
                             {{-- <a href="/" class="lightbox-image overlay-box"
                                 data-fancybox="gallery"></a> --}}
                             <div class="cap-box">
